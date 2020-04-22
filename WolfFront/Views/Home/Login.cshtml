@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52115242-17"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-52115242-17');
+    </script>
+
+    <meta charset="utf-8">
+    <title>Jumpstart SaaS App & Software Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+      window.addEventListener("load",function(){document.querySelector('body').classList.add('loaded');});
+    </script>
+    <!-- End loading animation -->
+    <link href="~/assets/css/theme.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loading-animation"></div>
+    </div>
+
+    <div data-overlay class="min-vh-100 bg-light d-flex flex-column justify-content-md-center">
+        <section class="row no-gutters p-0 bg-light min-vh-100">
+            <div class="col-lg-6 d-none d-lg-block order-lg-2">
+                <img class="flex-fill" src="~/shakaly.jpg" alt="Image">
+            </div>
+            <div class="col-lg-6">
+                <section class="p-0 bg-light">
+                    <div class="container min-vh-lg-100 d-flex flex-column justify-content-center text-center py-4 py-md-5">
+                        <a href="https://7febcf9c.ngrok.io/" class="fade-page">
+                            <img src="~/logo.png" alt="Wolf Skills">
+                        </a>
+                        <div class="row justify-content-center my-5">
+                            <div class="col-xl-7 col-lg-8">
+                                <div class="card card-body shadow text-left">
+                                    <h1 class="h5 text-center">Авторизация</h1>
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="email" id="mail" class="form-control" name="sign-up-email" placeholder="Почта">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" id="pass" class="form-control" name="sign-up-password" placeholder="Пароль">
+                                            <div class="text-right text-small mt-2">
+                                                <a href="#!">Забыли пароль?</a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox text-small">
+                                                <input type="checkbox" class="custom-control-input" id="sign-up-agree">
+                                                <label class="custom-control-label" for="sign-up-agree">
+                                                    <a>Запомнить данные для входа</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary btn-block" type="submit">Войти</button>
+                                    </form>
+                                </div>
+                                <div class="text-center text-small mt-3">
+                                    @Html.ActionLink("Зарегистрируйтесь", "Register", "Home")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
+
+    <a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up" data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
+        <img src="~/assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
+    </a>
+    <!-- Required vendor scripts -->
+    <script type="text/javascript" src="~/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/assets/js/Login.js"></script>
+
+    <!--
+             This appears in the demo only.  This script ensures our demo countdowns are always showing a date in the future
+             by altering the date before the countdown is initialized
+        -->
+    
+
+    <script type="text/javascript">
+        // This script appears only in the demo - it disables forms with no action attribute to prevent
+        // navigating away from the page.
+        jQuery("form:not([action])").on('submit', function () { return false; });
+    </script>
+
+</body>
+
+</html>
+
+

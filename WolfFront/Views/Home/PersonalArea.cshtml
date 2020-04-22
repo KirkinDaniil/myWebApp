@@ -1,0 +1,233 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="~/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/PersonalArea.js"></script>
+
+    <meta charset="utf-8">
+    <title>WolfSkills</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/assets/css/theme.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loading-animation"></div>
+    </div>
+    <section class="pb-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col d-flex align-items-center">
+                    <a href="https://7febcf9c.ngrok.io/" class="fade-page">
+                        <img src="~/logo.png" alt="Wolf Skills">
+                    </a>
+                    <div class="ml-4">
+                        <h1 class="mb-2">Личный кабинет</h1>
+                        <div class="lead">Настройки личного профиля, текущий рейтинг, выбранные курсы.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="profile-tabs nav nav-tabs border-0" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="progress-tab" data-toggle="tab" href="#progress" role="tab" aria-controls="progress" aria-selected="true">Курсы и рейтинг</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="personal" aria-selected="false">Личная информация</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="bg-light tab-content pt-5">
+        <div class="tab-pane fade show active" id="progress" role="tabpanel" aria-labelledby="progress-tab">
+            <div class="container">
+                <div class="row mb-4 mb-md-5">
+                    <div class="col-auto">
+                        <h3>Успеваемость</h3>
+                        <div>Здесь отображаются твой рейтинг, выбранные курсы и прогресс по ним</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-xl-8 col-md-12">
+                        <form>
+                            <div class="card card-body shadow-sm">
+                                <div>
+                                    <img src="~/assets/img/logos/js.png" alt="JS icon" class="icon bg-success">
+                                    <h3 class="mt-4">Изучение Javascript</h3>
+                                    <div class="progress-state">Текущий уровень: <span id="current-level">Волчок</span></div>
+                                    <div class="progress-state">Пройдено тестов: <span id="count-done">5</span> из <span id="count-total">20</span></div>
+                                    <div class="progress-state-bar">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+            <div class="container">
+                <div class="row mb-4 mb-lg-5">
+                    <div class="col">
+                        <div class="d-flex align-items-md-center">
+                            <img src="~/assets/img/avatar.jpg" alt="Avatar" class="avatar avatar-lg flex-shrink-0">
+                            <div class="ml-4">
+                                <button class="btn btn-sm btn-primary">Загрузить фото</button>
+                                <div class="text-small mt-3">Эй, друг! Будет лучше, если твоя фотка будет не меньше, чем 256px на 256px и в формате .jpg или .png</div>
+                            </div>
+                        </div>
+                        <hr class="mt-lg-5">
+                    </div>
+                </div>
+                <div class="row mb-4 mb-md-5 align-items-start">
+                    <div class="col-lg-4 order-lg-2 mb-4 mb-lg-0 sticky-lg-top pl-lg-5">
+                        <div class="alert alert-primary">
+                            Ну чего ты боишься? Назови свое имя, волчонок!<br>И помни, что ты согласен с нашей
+                            <a href="#">Политикой обработки персональных данных</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 border-lg-right pr-lg-5">
+                        <div class="row mb-lg-5">
+                            <div class="col">
+                                <h3>Основное</h3>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="row form-row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="first-name">Имя</label>
+                                        <input type="text" class="form-control user-data" id="first-name" value="Данил">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="last-name">Фамилия</label>
+                                        <input type="text" class="form-control user-data" id="last-name" value="Киркин">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Логин</label>
+                                <input type="text" id="username" class="form-control user-data" value="Volk2000">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Электронная почта</label>
+                                <input type="email" id="email" class="form-control user-data" value="mega_nagibator228@ya.ru">
+                            </div>
+                            <button class="btn btn-primary" id="save" disabled="disabled" type="submit">Сохранить</button>
+                        </form>
+                    </div>
+                </div>
+                <hr class="mb-4 mb-md-5">
+                <div class="row mb-4 mb-md-5 align-items-start">
+                    <div class="col-lg-4 order-lg-2 mb-4 mb-lg-0 sticky-lg-top pl-lg-5">
+                        <div class="alert alert-primary">
+                            Представься стае, дружище
+                        </div>
+                    </div>
+                    <div class="col-lg-8 border-lg-right pr-lg-5">
+                        <div class="row mb-lg-5">
+                            <div class="col">
+                                <h3>О себе</h3>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="row form-row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="birthday">Дата рождения</label>
+                                        <input type="date" id="birthday" class="form-control user-data2" data-flatpickr="data-flatpickr" data-alt-input="true" placeholder="Выбери дату">
+                                        <small>Слишком юные волчата не допускаются к занятиям</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="country">Пол</label>
+                                        <div class="custom-control custom-radio mb-1">
+                                            <input type="radio" id="male" name="sex" class="custom-control-input user-data2">
+                                            <label class="custom-control-label" for="male">Я волчонок</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="female" name="sex" class="custom-control-input user-data2">
+                                            <label class="custom-control-label" for="female">Я волчонка</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bio">Расскажи о себе и своих интересах</label>
+                                <textarea id="bio" rows="6" class="form-control user-data2"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-switch mb-4">
+                                    <input type="checkbox" class="custom-control-input" id="switch-1">
+                                    <label class="custom-control-label" for="switch-1">Я красавчик</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" id="save2" disabled="disabled" type="submit">Сохранить</button>
+                        </form>
+                    </div>
+                </div>
+                <hr class="mb-4 mb-md-5">
+                <div class="row mb-4 mb-md-5 align-items-start">
+                    <div class="col-lg-4 order-lg-2 mb-4 mb-lg-0 sticky-lg-top pl-lg-5">
+                        <div class="alert alert-primary">
+                            Не забывай регулярно менять пароль, шакалы не дремлют и готовы всегда взламывать неосторожных волчат!
+                        </div>
+                    </div>
+                    <div class="col-lg-8 border-lg-right pr-lg-5">
+                        <div class="row mb-lg-5">
+                            <div class="col">
+                                <h3>Безопасность</h3>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="row form-row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="first-name">Новый пароль</label>
+                                        <input type="password" class="form-control" id="new-pass" value="Nagibator888">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="last-name">Повтори новый пароль</label>
+                                        <input type="password" class="form-control" id="new-pass2" value="Nagibator888">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" disabled="disabled" type="submit">Сменить пароль</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up" data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
+        <img src="~/assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
+    </a>
+    <!-- Required vendor scripts (Do not remove) -->
+    <script type="text/javascript" src="~/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.js"></script>
+
+</body>
+
+</html>
+
+
