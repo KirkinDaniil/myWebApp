@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col d-flex align-items-center">
-                    <a href="https://7febcf9c.ngrok.io/" class="fade-page">
+                    <a href="https://localhost:44318/" class="fade-page">
                         <img src="~/logo.png" alt="Wolf Skills">
                     </a>
                     <div class="ml-4">
@@ -124,7 +124,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="email">Электронная почта</label>
-                                <input type="email" id="email" class="form-control user-data" value="mega_nagibator228@ya.ru">
+                                <input readonly type="email" id="email" class="form-control user-data" value="mega_nagibator228@ya.ru">
                             </div>
                             <button class="btn btn-primary" id="save" disabled="disabled" type="submit">Сохранить</button>
                         </form>
@@ -206,11 +206,11 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="last-name">Повтори новый пароль</label>
-                                        <input type="password" class="form-control" id="new-pass2" value="Nagibator888">
+                                        <input readonly type="password" class="form-control" id="new-pass2" value="Nagibator888">
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary" disabled="disabled" type="submit">Сменить пароль</button>
+                            <button class="btn btn-primary" id="change-pass" disabled="disabled" type="submit">Сменить пароль</button>
                         </form>
                     </div>
                 </div>

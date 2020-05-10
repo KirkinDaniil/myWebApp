@@ -2,7 +2,7 @@
 if (token != null) {
     $.ajax({
         method: "Get",
-        url: "https://7febcf9c.ngrok.io/api/Login",
+        url: "https://localhost:44318/api/Login",
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", 'Bearer ' + token);
         },
@@ -61,10 +61,10 @@ if (token != null) {
             })
         },
         error: function () {
-            location.replace("https://7febcf9c.ngrok.io/Home/Login");
+            location.replace("https://localhost:44318/Home/Login");
         }
     });
 }
 else {
-    location.replace("https://7febcf9c.ngrok.io/Home/Login");
+    location.replace("https://localhost:44318/Login");
 }

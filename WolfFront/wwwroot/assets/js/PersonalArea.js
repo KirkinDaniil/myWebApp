@@ -2,7 +2,7 @@
 if (token != null) {
     $.ajax({
         method: "Get",
-        url: "https://7febcf9c.ngrok.io/api/Login",
+        url: "https://localhost:44318/api/Login",
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", 'Bearer ' + token);
         },
@@ -10,7 +10,7 @@ if (token != null) {
         success: function () {
             $.ajax({
                 method: "Get",
-                url: "https://7febcf9c.ngrok.io/api/User",
+                url: "https://localhost:44318/api/User",
                 beforeSend: function (xhr) {
                     xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                 },
@@ -21,11 +21,17 @@ if (token != null) {
                     $("#first-name").val(data.name);
                     $("#username").val(data.login);
                     $('#last-name').val(data.surname);
+                    if (data.gender) {
+                        $('#male').attr("checked", "checked");
+                    }
+                    else {
+                        $('#female').attr("checked", "checked");
+                    }
                     let date = new Date(Date.parse(data.birthDate));
                     console.log(date);
 
                     var dd = date.getDate();
-                    var mm = date.getMonth() + 1; //January is 0!
+                    var mm = date.getMonth() + 1; 
 
                     var yyyy = date.getFullYear();
                     if (dd < 10) { dd = '0' + dd }
@@ -33,7 +39,6 @@ if (token != null) {
                     let today = yyyy + '-' + mm + '-' + dd;
 
                     $('#birthday').val(today);
-                    console.log(data);
                     $('#bio').val(data.about);
                     document.querySelectorAll('.user-data').forEach(item => {
                         item.addEventListener('change', event => {
@@ -48,7 +53,7 @@ if (token != null) {
                         let surname = $('#last-name').val();
                         $.ajax({
                             method: "PUT",
-                            url: "https://7febcf9c.ngrok.io/api/User",
+                            url: "https://localhost:44318/api/User",
                             beforeSend: function (xhr) {
                                 xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                             },
@@ -57,7 +62,7 @@ if (token != null) {
                             data: JSON.stringify({ "Login": login, "Name": name, "Surname": surname, "Email": mail }),
                             crossDomain: true,
                             success: function (data) {
-                                window.location.reload(false);
+                                $('#save').attr('disabled', true);
                             },
                             error: function (xmlHttpRequest, textStatus, errorThrown) {
                                 $('#save').attr('disabled', true);
@@ -73,36 +78,70 @@ if (token != null) {
                         event.preventDefault();
                         let birth = $("#birthday").val();
                         let bio = $("#bio").val();
+                        let gender;
+                        if ($('#male')[0].checked) {
+                            gender = true;
+                        }
+                        else {
+                            gender = false;
+                        }
                         $.ajax({
                             method: "PUT",
-                            url: "https://7febcf9c.ngrok.io/api/Account",
+                            url: "https://localhost:44318/api/Account",
                             beforeSend: function (xhr) {
                                 xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                             },
                             contentType: "application/json",
                             dataType: 'json',
-                            data: JSON.stringify({ "BirthDate":birth, "About":bio }),
+                            data: JSON.stringify({ "BirthDate":birth, "About":bio, "Gender":gender}),
                             crossDomain: true,
                             success: function (data) {
                                 $('#save2').attr('disabled', true);
                             },
                             error: function (xmlHttpRequest, textStatus, errorThrown) {
-                                window.location.reload(false);
+                                $('#save2').attr('disabled', true);
+                            }
+                        });
+                    });
+                    $('#new-pass').change(function (event) {
+                        event.preventDefault();
+                        $('#new-pass2').removeAttr("readonly");
+                        $('#change-pass').removeAttr('disabled');
+                    });
+                    $('#change-pass').click(function (event) {
+                        event.preventDefault();
+                        let new_pass = $('#new-pass').val();
+                        $.ajax({
+                            method: "PUT",
+                            url: "https://localhost:44318/api/Password",
+                            beforeSend: function (xhr) {
+                                xhr.setRequestHeader("Authorization", 'Bearer ' + token);
+                            },
+                            contentType: "application/json",
+                            data: JSON.stringify(new_pass),
+                            crossDomain: true,
+                            success: function (data) {
+                                $('#change-pass').attr('disabled', true);
+                                $('#new-pass2').attr("readonly", true);
+                            },
+                            error: function (xmlHttpRequest, textStatus, errorThrown) {
+                                $('#change-pass').attr('disabled', true);
+                                $('#new-pass2').attr("readonly", true);
                             }
                         });
                     });
                 },
                 error: function () {
-                    location.assign("https://7febcf9c.ngrok.io/Home/Login");
+                    location.assign("https://localhost:44318/Home/Login");
                 }
             });
         },
         error: function () {
-            location.assign("https://7febcf9c.ngrok.io/Home/Login");
+            location.assign("https://localhost:44318/Home/Login");
         }
     });
 }
 else {
-    location.assign("https://7febcf9c.ngrok.io/Home/Login");
+    location.assign("https://localhost:44318/Home/Login");
 }
     
