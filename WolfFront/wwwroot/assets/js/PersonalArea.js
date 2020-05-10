@@ -2,7 +2,7 @@
 if (token != null) {
     $.ajax({
         method: "Get",
-        url: "https://localhost:44318/api/Login",
+        url: "https://wolfskillsproject.azurewebsites.net/api/Login",
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", 'Bearer ' + token);
         },
@@ -10,7 +10,7 @@ if (token != null) {
         success: function () {
             $.ajax({
                 method: "Get",
-                url: "https://localhost:44318/api/User",
+                url: "https://wolfskillsproject.azurewebsites.net/api/User",
                 beforeSend: function (xhr) {
                     xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                 },
@@ -53,7 +53,7 @@ if (token != null) {
                         let surname = $('#last-name').val();
                         $.ajax({
                             method: "PUT",
-                            url: "https://localhost:44318/api/User",
+                            url: "https://wolfskillsproject.azurewebsites.net/api/User",
                             beforeSend: function (xhr) {
                                 xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                             },
@@ -87,7 +87,7 @@ if (token != null) {
                         }
                         $.ajax({
                             method: "PUT",
-                            url: "https://localhost:44318/api/Account",
+                            url: "https://wolfskillsproject.azurewebsites.net/api/Account",
                             beforeSend: function (xhr) {
                                 xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                             },
@@ -113,7 +113,7 @@ if (token != null) {
                         let new_pass = $('#new-pass').val();
                         $.ajax({
                             method: "PUT",
-                            url: "https://localhost:44318/api/Password",
+                            url: "https://wolfskillsproject.azurewebsites.net/api/Password",
                             beforeSend: function (xhr) {
                                 xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                             },
@@ -132,16 +132,16 @@ if (token != null) {
                     });
                 },
                 error: function () {
-                    location.assign("https://localhost:44318/Home/Login");
+                    location.assign("https://wolfskillsproject.azurewebsites.net/Home/Login");
                 }
             });
         },
         error: function () {
-            location.assign("https://localhost:44318/Home/Login");
+            location.assign("https://wolfskillsproject.azurewebsites.net/Home/Login");
         }
     });
 }
 else {
-    location.assign("https://localhost:44318/Home/Login");
+    location.assign("https://wolfskillsproject.azurewebsites.net/Home/Login");
 }
     

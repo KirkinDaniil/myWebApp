@@ -9,14 +9,14 @@
         let conf = $("#confirm").val() + "ccc";
         $.ajax({
             method: "POST",
-            url: "https://localhost:44318/api/Account",
+            url: "https://wolfskillsproject.azurewebsites.net/api/Account",
             contentType: "application/json",
             dataType: 'json',
             data: JSON.stringify({ "Login": login, "Name": name, "Surname": surname, "Email": mail, "Password": pass, "ConfirmPassword": conf }),
             crossDomain: true,
             success: function (data) {
                 alert("Завершите регистрацию, перейдя по ссылке, отправленной на почту");
-                location.assign("https://localhost:44318/");
+                location.assign("https://wolfskillsproject.azurewebsites.net/");
             },
             error: function (xmlHttpRequest, textStatus, errorThrown) {
                 if (xmlHttpRequest.readyState == 0 || xmlHttpRequest.status == 0)

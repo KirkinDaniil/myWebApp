@@ -5,14 +5,14 @@
         let pass = $("#pass").val() + "ccc";
         $.ajax({
             method: "POST",
-            url: "https://localhost:44318/token",
+            url: "https://wolfskillsproject.azurewebsites.net/token",
             contentType: "application/json",
             dataType: 'json',
             data: JSON.stringify({"Email": mail, "Password": pass}),
             crossDomain: true,
             success: function (data) {
                 localStorage.setItem("access_token", data.access_token);
-                location.assign("https://localhost:44318/");
+                location.assign("https://wolfskillsproject.azurewebsites.net/");
             },
             error: function (xmlHttpRequest, textStatus, errorThrown) {
                 if (xmlHttpRequest.readyState == 0 || xmlHttpRequest.status == 0)

@@ -3,14 +3,14 @@
     if (token != null) {
         $.ajax({
             method: "Get",
-            url: "https://localhost:44318/api/Login",
+            url: "https://wolfskillsproject.azurewebsites.net/api/Login",
             beforeSend: function (xhr) { 
                 xhr.setRequestHeader("Authorization", 'Bearer ' + token);
             },
             crossDomain: true,
             success: function () {
-                $("#Reg").text("Личный кабинет").attr('href', 'https://localhost:44318/Home/PersonalArea');
-                $("#Enter").html("Выход").attr('href', 'https://localhost:44318/').click(function (event) {
+                $("#Reg").text("Личный кабинет").attr('href', 'https://wolfskillsproject.azurewebsites.net/Home/PersonalArea');
+                $("#Enter").html("Выход").attr('href', 'https://wolfskillsproject.azurewebsites.net/').click(function (event) {
                     localStorage.clear();
                 });
             },

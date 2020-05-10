@@ -2,7 +2,7 @@
 if (token != null) {
     $.ajax({
         method: "Get",
-        url: "https://localhost:44318/api/Login",
+        url: "https://wolfskillsproject.azurewebsites.net/api/Login",
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", 'Bearer ' + token);
         },
@@ -61,10 +61,10 @@ if (token != null) {
             })
         },
         error: function () {
-            location.replace("https://localhost:44318/Home/Login");
+            location.replace("https://wolfskillsproject.azurewebsites.net/Home/Login");
         }
     });
 }
 else {
-    location.replace("https://localhost:44318/Login");
+    location.replace("https://wolfskillsproject.azurewebsites.net/Login");
 }
