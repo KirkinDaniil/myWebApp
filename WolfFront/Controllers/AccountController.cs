@@ -43,8 +43,10 @@ namespace WolfApi.Controllers
                     // тема письма
                     m.Subject = "Подтверждение регистрации";
                     // текст письма
-                    var body = new BodyBuilder();
-                    body.HtmlBody = $"<a href = 'https://wolfskillsproject.azurewebsites.net/api/Account?guid={validToken}'> confirm </a>";
+                    var body = new BodyBuilder
+                    {
+                        HtmlBody = $"<a href = 'https://wolfskillsproject.azurewebsites.net/api/Account?guid={validToken}'> confirm </a>"
+                    };
                     m.Body = body.ToMessageBody();
                     // письмо представляет код html
                     using (var client = new SmtpClient())

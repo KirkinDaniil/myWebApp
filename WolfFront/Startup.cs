@@ -62,9 +62,9 @@ namespace WolfApi
 
             app.UseAuthentication();
 
-            app.UseAuthorization();
-
             app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
