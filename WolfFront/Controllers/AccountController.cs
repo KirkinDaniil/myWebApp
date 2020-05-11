@@ -38,7 +38,7 @@ namespace WolfApi.Controllers
                     var host = Request.Host;
                     // отправитель - устанавливаем адрес и отображаемое в письме имя
                     var m = new MimeMessage();
-                    m.From.Add(new MailboxAddress("Daniil", "wolfskills2020@gmail.com"));
+                    m.From.Add(new MailboxAddress("Akella", "woofwoofwoofarrr@gmail.com"));
                     m.To.Add(new MailboxAddress("NewUser", newUser.Email));
                     // тема письма
                     m.Subject = "Подтверждение регистрации";
@@ -50,7 +50,7 @@ namespace WolfApi.Controllers
                     using (var client = new SmtpClient())
                     {
                         client.Connect("smtp.gmail.com", 587, false);
-                        client.Authenticate("wolfskills2020@gmail.com", "iVmBqAyy");
+                        client.Authenticate("woofwoofwoofarrr@gmail.com", "iVmBqAyy");
                         client.Send(m);
                         client.Disconnect(true);
                     }
