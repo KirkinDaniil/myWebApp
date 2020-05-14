@@ -12,7 +12,7 @@ if (token != null) {
                 let correct = new Array();
                 $.ajax({
                     method: "Get",
-                    url: "https://wolfskillsproject.azurewebsites.net/api/Task",
+                    url: "https://wolfskillsproject.azurewebsites.net/api/Task&Id=3",
                     beforeSend: function (xhr) {
                         xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                     },
