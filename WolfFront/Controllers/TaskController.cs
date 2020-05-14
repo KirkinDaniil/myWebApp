@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,11 +12,24 @@ namespace WolfApi.Controllers
     [ApiController]
     public class TaskController : ControllerBase
     {
-        [Authorize]
-        [HttpPost]
-        public IActionResult UpdateTestStatistics([FromBody]int points)
+        ApplicationDbContext usersDatabase;
+        public TaskController(ApplicationDbContext users)
         {
-            return Ok();
+            usersDatabase = users;
+        }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult UpdateTestStatistics(int Id)
+        {
+            Models.Task task = usersDatabase.Tasks.FirstOrDefault(x => x.Id == Id);
+            if(task!=null)
+            {
+                string answers = task.Answers;
+                var matches = answers.Split('|');
+                return Ok(matches);
+            }
+            return BadRequest("No such task");
         }
     }
 }

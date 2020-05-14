@@ -9,6 +9,18 @@ if (token != null) {
         crossDomain: true,
         success: function () {
             $("#submit").click(function (event) {
+                let correct = new Array();
+                $.ajax({
+                    method: "Get",
+                    url: "https://wolfskillsproject.azurewebsites.net/api/Task",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Bearer ' + token);
+                    },
+                    crossDomain: true,
+                    success: function (data) {
+                        correct = data;
+                    }
+                });
                 event.preventDefault();
                 let answers = new Array();
                 let allChecked = true;
@@ -28,7 +40,7 @@ if (token != null) {
                 if (allChecked) {
                     let level = "Волчонок";
                     let points = 0;
-                    let correct = new Array("Будет ошибка", "NaN", "2", "false, true.", "код функции f", "undefined", "В коде ошибка", "Math.max.apply(null, arr)", "parent", "Обычным объектом", "0, затем 1", "дупкин", "Цифре", "#", "null");
+                    //let correct = new Array("Будет ошибка", "NaN", "2", "false, true.", "код функции f", "undefined", "В коде ошибка", "Math.max.apply(null, arr)", "parent", "Обычным объектом", "0, затем 1", "дупкин", "Цифре", "#", "null");
                     for (i = 0; i < 15; ++i) {
                         if (answers[i] === correct[i]) {
                             ++points;
