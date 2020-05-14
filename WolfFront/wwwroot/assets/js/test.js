@@ -17,6 +17,7 @@ if (token != null) {
                     beforeSend: function (xhr) {
                         xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                     },
+                    contentType: "application/json",
                     crossDomain: true,
                     success: function (data) {
                         correct = data;
