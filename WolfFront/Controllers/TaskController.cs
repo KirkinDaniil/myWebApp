@@ -22,7 +22,7 @@ namespace WolfApi.Controllers
         [HttpGet]
         public IActionResult UpdateTestStatistics(int Id)
         {
-            Models.Task task = usersDatabase.Tasks.FirstOrDefault(x => x.Id == Id);
+            Models.Task task = usersDatabase.Tests.FirstOrDefault(x => x.Id == Id);
             if(task!=null)
             {
                 string answers = task.Answers;
