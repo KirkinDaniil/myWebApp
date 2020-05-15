@@ -85,8 +85,8 @@
                             <div class="ml-4">
                                 @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
                                 {
-                                    <input type="file" class="btn btn-sm btn-primary" value="Загрузить фото"/>
-                                    <input type="submit" value="Загрузить"/>
+                                    <input type="file" class="btn btn-sm btn-primary"/>
+                                    <input type="submit" class="btn btn-sm btn-primary" value="Загрузить "/>
                                 }
                                 <div class="text-small mt-3">Эй, друг! Будет лучше, если твоя фотка будет не меньше, чем 256px на 256px и в формате .jpg или .png</div>
                             </div>
