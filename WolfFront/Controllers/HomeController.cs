@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.IO;
 
 namespace WolfFront.Controllers
 {
@@ -27,6 +29,21 @@ namespace WolfFront.Controllers
         public IActionResult Test()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Upload(IFormFile upload)
+        {
+            if (upload != null)
+            {
+                string fileName = System.IO.Path.GetFileName(upload.FileName);
+                string filePath = "~/Files/" + fileName;
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    upload.CopyTo(stream);
+                }
+            }
+            return RedirectToAction("PersonalArea", "Home");
         }
     }
 }
