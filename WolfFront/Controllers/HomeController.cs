@@ -44,18 +44,18 @@ namespace WolfFront.Controllers
         }
 
         [HttpPost]
-        public ActionResult Upload(IFormFile upload)
+        public ActionResult Upload(IFormFile uploadedFile)
         {
             string personEmail = User.Identity.Name;
             User person = usersDatabase.Users.FirstOrDefault(x => x.Email == personEmail && x.IsActive);
             string fileName;
-            if (upload != null)
+            if (uploadedFile != null)
             {
-                fileName = System.IO.Path.GetFileName(upload.FileName);
+                fileName = System.IO.Path.GetFileName(uploadedFile.FileName);
                 string filePath = _appEnvironment.WebRootPath + "~/Files/" + fileName;
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
-                    upload.CopyTo(stream);
+                    uploadedFile.CopyTo(stream);
                 }
                 person.ImagePath = fileName;
             }
