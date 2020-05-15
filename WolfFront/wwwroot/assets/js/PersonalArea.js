@@ -110,25 +110,30 @@ if (token != null) {
                     });
                     $('#change-pass').click(function (event) {
                         event.preventDefault();
-                        let new_pass = $('#new-pass').val();
-                        $.ajax({
-                            method: "PUT",
-                            url: "https://wolfskillsproject.azurewebsites.net/api/Password",
-                            beforeSend: function (xhr) {
-                                xhr.setRequestHeader("Authorization", 'Bearer ' + token);
-                            },
-                            contentType: "application/json",
-                            data: JSON.stringify(new_pass),
-                            crossDomain: true,
-                            success: function (data) {
-                                $('#change-pass').attr('disabled', true);
-                                $('#new-pass2').attr("readonly", true);
-                            },
-                            error: function (xmlHttpRequest, textStatus, errorThrown) {
-                                $('#change-pass').attr('disabled', true);
-                                $('#new-pass2').attr("readonly", true);
-                            }
-                        });
+                        if ($('#new-pass2').val() == $('#new-pass').val()) {
+                            let new_pass = $('#new-pass').val();
+                            $.ajax({
+                                method: "PUT",
+                                url: "https://wolfskillsproject.azurewebsites.net/api/Password",
+                                beforeSend: function (xhr) {
+                                    xhr.setRequestHeader("Authorization", 'Bearer ' + token);
+                                },
+                                contentType: "application/json",
+                                data: JSON.stringify(new_pass),
+                                crossDomain: true,
+                                success: function (data) {
+                                    $('#change-pass').attr('disabled', true);
+                                    $('#new-pass2').attr("readonly", true);
+                                },
+                                error: function (xmlHttpRequest, textStatus, errorThrown) {
+                                    $('#change-pass').attr('disabled', true);
+                                    $('#new-pass2').attr("readonly", true);
+                                }
+                            });
+                        }
+                        else {
+                            $('#new-pass2').css({ "color": "red", "border": "1px solid red" });
+                        }
                     });
                 },
                 error: function () {
