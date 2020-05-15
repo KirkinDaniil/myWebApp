@@ -17,5 +17,6 @@ namespace WolfApi.Models
         public string Token { get; set; }
         public DateTime BirthDate { get; set; }
         public string About { get; set; }
+        public string ImagePath { get; set; }
     }
 }

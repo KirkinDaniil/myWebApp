@@ -1,11 +1,23 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
+using System.Linq;
+using WolfApi.Models;
 
 namespace WolfFront.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext usersDatabase;
+        public HomeController(ApplicationDbContext users)
+        {
+            usersDatabase = users;
+        }
+
+        IWebHostEnvironment _appEnvironment;
+
         public IActionResult Index()
         {
             return View();
@@ -32,16 +44,21 @@ namespace WolfFront.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Upload(IFormFile upload)
         {
+            string personEmail = User.Identity.Name;
+            User person = usersDatabase.Users.FirstOrDefault(x => x.Email == personEmail && x.IsActive);
+            string fileName;
             if (upload != null)
             {
-                string fileName = System.IO.Path.GetFileName(upload.FileName);
-                string filePath = "~/Files/" + fileName;
+                fileName = System.IO.Path.GetFileName(upload.FileName);
+                string filePath = _appEnvironment.WebRootPath + "~/Files/" + fileName;
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     upload.CopyTo(stream);
                 }
+                person.ImagePath = fileName;
             }
             return RedirectToAction("PersonalArea", "Home");
         }

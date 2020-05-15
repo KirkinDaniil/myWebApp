@@ -25,7 +25,7 @@ namespace WolfApi.Controllers
             User person = usersDatabase.Users.FirstOrDefault(x => x.Email == personEmail && x.IsActive);
             if (person!=null)
             {
-                var result = new { person.Name, person.Surname, person.Email, person.Login, person.IsActive, person.BirthDate, person.About, person.Gender };
+                var result = new { person.Name, person.Surname, person.Email, person.Login, person.IsActive, person.BirthDate, person.About, person.Gender, person.ImagePath };
                 return Ok(result);
             }
             return BadRequest("Not logined");   

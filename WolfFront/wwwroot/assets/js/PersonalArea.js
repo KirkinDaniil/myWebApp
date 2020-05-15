@@ -21,6 +21,9 @@ if (token != null) {
                     $("#first-name").val(data.name);
                     $("#username").val(data.login);
                     $('#last-name').val(data.surname);
+                    if (data.imagePath) {
+                        $('.img').attr('src', 'Files/' + data.imagePath);
+                    }
                     if (data.gender) {
                         $('#male').attr("checked", "checked");
                     }
@@ -28,7 +31,6 @@ if (token != null) {
                         $('#female').attr("checked", "checked");
                     }
                     let date = new Date(Date.parse(data.birthDate));
-                    console.log(date);
 
                     var dd = date.getDate();
                     var mm = date.getMonth() + 1; 
