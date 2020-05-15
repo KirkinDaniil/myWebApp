@@ -77,7 +77,6 @@ namespace WolfApi.Controllers
         }
 
         [HttpPut]
-        [Authorize]
         public async Task<IActionResult> ChangeUserDescription([FromBody]AdditionalInfo model)
         {
             string personEmail = User.Identity.Name;
