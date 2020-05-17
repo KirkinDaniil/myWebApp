@@ -22,7 +22,7 @@ if (token != null) {
                     data: fd,
                     processData: false,
                     crossDomain: true,
-                    success: $('.img').attr('src', 'Files/' + data.imagePath);
+                    success: $('.img').attr('src', 'Files/' + data.imagePath)
                 });
             })
             
