@@ -47,7 +47,7 @@ namespace WolfFront.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult> Upload(IFormFile uploadedFile)
+        public async Task<ActionResult> Upload([FromBody]IFormFile uploadedFile)
         {
             string personEmail = User.Identity.Name;
             User person = usersDatabase.Users.FirstOrDefault(x => x.Email == personEmail && x.IsActive);
