@@ -38,9 +38,8 @@ if (token != null) {
                     $("#first-name").val(data.name);
                     $("#username").val(data.login);
                     $('#last-name').val(data.surname);
-                    console.log(data.imagePath);
                     if (data.imagePath) {
-                        $('.img').attr('src', 'Files/' + data.imagePath);
+                        $('#img').attr('src', '~/assets/img/avatars/' + data.imagePath);
                     }
                     if (data.gender) {
                         $('#male').attr("checked", "checked");
