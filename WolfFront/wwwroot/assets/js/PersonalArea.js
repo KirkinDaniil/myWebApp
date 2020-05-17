@@ -9,6 +9,8 @@ if (token != null) {
         crossDomain: true,
         success: function () {
             $('#photo').click(function () {
+                var fd = new FormData;
+                fd.append('img', $('input[name$="uploadedFile"]').prop('files')[0]);
                 $.ajax({
                     method: "POST",
                     url: "https://wolfskillsproject.azurewebsites.net/Home/Upload",
@@ -16,7 +18,7 @@ if (token != null) {
                         xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                     },
                     enctype: "multipart/form-data",
-                    data: $('input[name$="uploadedFile"]').prop('files')[0],
+                    data: fd,
                     crossDomain: true
                 });
             })
