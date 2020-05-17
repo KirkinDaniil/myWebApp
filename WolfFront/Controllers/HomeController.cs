@@ -45,6 +45,11 @@ namespace WolfFront.Controllers
             return View();
         }
 
+        public IActionResult Test2()
+        {
+            return View();
+        }
+
         [HttpPost]
         [Authorize]
         public async Task<ActionResult> Upload([FromForm]IFormFile uploadedFile)
