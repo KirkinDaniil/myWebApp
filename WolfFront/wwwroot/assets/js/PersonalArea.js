@@ -16,7 +16,7 @@ if (token != null) {
                         xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                     },
                     enctype: "multipart/form-data",
-                    data: $('input[name$="uploadedFile"]').prop('files'),
+                    data: $('input[name$="uploadedFile"]').prop('files')[0],
                     crossDomain: true
                 });
             })
