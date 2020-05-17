@@ -58,8 +58,8 @@ namespace WolfFront.Controllers
             User person = usersDatabase.Users.FirstOrDefault(x => x.Email == personEmail && x.IsActive);
             if (uploadedFile != null)
             {
-                var fileName = uploadedFile.FileName;
-                var filePath = "https://wolfskillsproject.azurewebsites.net/assets/img/avatars" + fileName;
+                var fileName = Path.GetFileName(uploadedFile.FileName);
+                var filePath = Directory.GetCurrentDirectory() + "wwwroot/assets/img/avatars/" + fileName;
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     uploadedFile.CopyTo(stream);
