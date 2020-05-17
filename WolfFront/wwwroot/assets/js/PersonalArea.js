@@ -18,7 +18,7 @@ if (token != null) {
                     beforeSend: function (xhr) {
                         xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                     },
-                    contentType: false,
+                    contentType: "multipart / form - data",
                     data: fd,
                     processData: false,
                     crossDomain: true
