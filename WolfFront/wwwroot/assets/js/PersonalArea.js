@@ -8,7 +8,8 @@ if (token != null) {
         },
         crossDomain: true,
         success: function () {
-            $('#photo').click(function () {
+            $('#photo').click(function (event) {
+                event.preventDefault();
                 var fd = new FormData;
                 fd.append('img', $('input[name$="uploadedFile"]').prop('files')[0]);
                 $.ajax({
