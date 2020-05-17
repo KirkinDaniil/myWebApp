@@ -59,7 +59,7 @@ namespace WolfFront.Controllers
             if (uploadedFile != null)
             {
                 var fileName = uploadedFile.FileName;
-                var filePath = Directory.GetCurrentDirectory() + "/wwwroot/assets/img/avatars" + fileName;
+                var filePath = "https://wolfskillsproject.azurewebsites.net//wwwroot/assets/img/avatars" + fileName;
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     uploadedFile.CopyTo(stream);
