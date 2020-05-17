@@ -8,7 +8,7 @@ if (token != null) {
         },
         crossDomain: true,
         success: function () {
-            $('.photo').click(function () {
+            $('#photo').click(function () {
                 $.ajax({
                     method: "POST",
                     url: "https://wolfskillsproject.azurewebsites.net/Home/Upload",
