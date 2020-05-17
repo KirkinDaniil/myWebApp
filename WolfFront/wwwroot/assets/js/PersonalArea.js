@@ -21,8 +21,7 @@ if (token != null) {
                     contentType: false,
                     data: fd,
                     processData: false,
-                    crossDomain: true,
-                    success: $('.img').attr('src', 'Files/' + data.imagePath)
+                    crossDomain: true
                 });
             })
             
