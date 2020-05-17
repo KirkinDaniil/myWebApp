@@ -39,7 +39,7 @@ if (token != null) {
                     $("#username").val(data.login);
                     $('#last-name').val(data.surname);
                     if (data.imagePath) {
-                        $('#img').attr('src', '~/assets/img/avatars/' + data.imagePath);
+                        $('#img').attr('src', 'assets/img/avatars/' + data.imagePath);
                     }
                     if (data.gender) {
                         $('#male').attr("checked", "checked");
