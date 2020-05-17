@@ -11,7 +11,7 @@ if (token != null) {
             $('#photo').click(function (event) {
                 event.preventDefault();
                 var fd = new FormData;
-                fd.append('img', $('input[name$="uploadedFile"]').prop('files')[0]);
+                fd.append('uploadedFile', $('input[name$="uploadedFile"]').prop('files')[0]);
                 $.ajax({
                     method: "POST",
                     url: "https://wolfskillsproject.azurewebsites.net/Home/Upload",
