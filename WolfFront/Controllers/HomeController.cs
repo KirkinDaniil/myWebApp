@@ -63,7 +63,7 @@ namespace WolfFront.Controllers
                 person.ImagePath = fileName;
                 await usersDatabase.SaveChangesAsync();
             }
-            return RedirectToAction("PersonalArea", "Home");
+            return Ok();
         }
     }
 }

@@ -20,7 +20,8 @@ if (token != null) {
                     contentType: false,
                     data: fd,
                     processData: false,
-                    crossDomain: true
+                    crossDomain: true,
+                    success: location.reload()
                 });
             })
             
