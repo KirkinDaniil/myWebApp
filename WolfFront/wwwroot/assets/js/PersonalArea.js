@@ -19,6 +19,7 @@ if (token != null) {
                     },
                     contentType: "multipart/form-data",
                     data: fd,
+                    processData: false,
                     crossDomain: true
                 });
             })
