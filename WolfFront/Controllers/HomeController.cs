@@ -56,11 +56,10 @@ namespace WolfFront.Controllers
         {
             string personEmail = User.Identity.Name;
             User person = usersDatabase.Users.FirstOrDefault(x => x.Email == personEmail && x.IsActive);
-            string fileName;
             if (uploadedFile != null)
             {
-                fileName = System.IO.Path.GetFileName(uploadedFile.FileName);
-                string filePath = _appEnvironment.WebRootPath + fileName;
+                var fileName = Path.GetFileName(uploadedFile.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\images", fileName);
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     uploadedFile.CopyTo(stream);
