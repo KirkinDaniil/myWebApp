@@ -10,7 +10,7 @@ if (token != null) {
         success: function () {
             $('#photo').click(function (event) {
                 event.preventDefault();
-                var fd = new FormData;
+                var fd = new FormData();
                 fd.append('uploadedFile', $('input[name$="uploadedFile"]').prop('files')[0]);
                 $.ajax({
                     method: "POST",
@@ -18,8 +18,9 @@ if (token != null) {
                     beforeSend: function (xhr) {
                         xhr.setRequestHeader("Authorization", 'Bearer ' + token);
                     },
-                    contentType: "multipart / form - data",
+                    contentType: false,
                     data: fd,
+                    processData: false,
                     crossDomain: true
                 });
             })
