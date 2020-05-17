@@ -60,7 +60,7 @@ namespace WolfFront.Controllers
             if (uploadedFile != null)
             {
                 fileName = System.IO.Path.GetFileName(uploadedFile.FileName);
-                string filePath = _appEnvironment.WebRootPath + "/Files/" + fileName;
+                string filePath = _appEnvironment.WebRootPath + "/assets/img" + fileName;
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     uploadedFile.CopyTo(stream);
