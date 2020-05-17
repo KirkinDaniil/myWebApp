@@ -83,11 +83,8 @@
                         <div class="d-flex align-items-md-center">
                             <img src="~/assets/img/avatar.jpg" alt="Avatar" id="img" class="avatar avatar-lg flex-shrink-0">
                             <div class="ml-4">
-                                @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                                {
-                                    <input type="file" class="btn btn-sm btn-primary" name="uploadedFile"/>
-                                    <input type="submit" class="btn btn-sm btn-primary" value="Загрузить "/>
-                                }
+                                  <input type="file" class="btn btn-sm btn-primary" name="uploadedFile"/>
+                                  <input type="submit" class="btn btn-sm btn-primary" id="photo" value="Загрузить "/>
                                 <div class="text-small mt-3">Эй, друг! Будет лучше, если твоя фотка будет не меньше, чем 256px на 256px и в формате .jpg или .png</div>
                             </div>
                         </div>

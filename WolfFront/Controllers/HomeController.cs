@@ -44,6 +44,7 @@ namespace WolfFront.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Upload(IFormFile uploadedFile)
         {
             string personEmail = User.Identity.Name;

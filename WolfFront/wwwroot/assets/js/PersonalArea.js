@@ -8,6 +8,19 @@ if (token != null) {
         },
         crossDomain: true,
         success: function () {
+            $('.photo').click(function () {
+                $.ajax({
+                    method: "POST",
+                    url: "https://wolfskillsproject.azurewebsites.net/Home/Upload",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Bearer ' + token);
+                    },
+                    enctype: "multipart/form-data",
+                    data: $('input[name$="uploadedFile"]').val(),
+                    crossDomain: true
+                });
+            })
+            
             $.ajax({
                 method: "Get",
                 url: "https://wolfskillsproject.azurewebsites.net/api/User",
