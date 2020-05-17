@@ -62,8 +62,9 @@ namespace WolfFront.Controllers
                 }
                 person.ImagePath = fileName;
                 await usersDatabase.SaveChangesAsync();
+                return Ok();
             }
-            return Ok();
+            return BadRequest();
         }
     }
 }
