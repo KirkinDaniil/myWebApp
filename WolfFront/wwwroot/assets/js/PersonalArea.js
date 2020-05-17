@@ -22,7 +22,7 @@ if (token != null) {
                     data: fd,
                     processData: false,
                     crossDomain: true,
-                    success: location.reload()
+                    success: setInterval('location.reload()', 4000)
                 });
             })
             
