@@ -24,7 +24,7 @@ namespace WolfFront.Controllers
             User person = usersDatabase.Users.FirstOrDefault(x => x.Email == personEmail && x.IsActive);
             if (person != null)
             {
-                person.Password = NewPass;
+                person.Password = NewPass+"ccc";
                 await usersDatabase.SaveChangesAsync();
             }
             return Ok();
