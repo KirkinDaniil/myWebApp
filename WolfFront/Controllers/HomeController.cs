@@ -50,6 +50,11 @@ namespace WolfFront.Controllers
             return View();
         }
 
+        public IActionResult TestCPlusPlus()
+        {
+            return View();
+        }
+
         [HttpPost]
         [Authorize]
         public async Task<ActionResult> Upload([FromForm]IFormFile uploadedFile)
