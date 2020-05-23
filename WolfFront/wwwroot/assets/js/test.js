@@ -73,7 +73,7 @@ if (token != null) {
             })
         },
         error: function () {
-            location.replace("https://wolfskillsproject.azurewebsites.net/Home/Login");
+            location.replace("https://wolfskillsproject.azurewebsites.net/Login");
         }
     });
 }
