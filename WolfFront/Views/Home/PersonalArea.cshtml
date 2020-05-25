@@ -43,6 +43,9 @@
                         <li class="nav-item">
                             <a href="<@Url.Action("Index", "Home" , new { @class = "nav-link" })%>#about">О проекте</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<@Url.Action("Index", "Home" , new { @class = "nav-link" })%>#rating">Рейтинг</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Тесты
@@ -53,12 +56,9 @@
                                 @Html.ActionLink("C++", "Test", "Home", null, new { @class = "dropdown-item" })
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a href="<@Url.Action("Index", "Home" , new { @class = "nav-link" })%>#rating">Рейтинг</a>
-                        </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        @Html.ActionLink("Главная", "Test", "Home", null, new { @class = "btn btn-outline-success my-2 my-sm-0" })
+                        @Html.ActionLink("Главная", "Index", "Home", null, new { @class = "btn btn-outline-success my-2 my-sm-0" })
                     </form>
                 </div>
             </div>
