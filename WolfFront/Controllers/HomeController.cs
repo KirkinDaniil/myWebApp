@@ -64,7 +64,7 @@ namespace WolfFront.Controllers
             if (uploadedFile != null)
             {
                 var fileName = Path.GetFileName(uploadedFile.FileName);
-                var filePath = Directory.GetCurrentDirectory() + "/wwwroot/img/avatars/" + fileName;
+                var filePath = Directory.GetCurrentDirectory() + "/wwwroot/img/avatar/" + fileName;
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     uploadedFile.CopyTo(stream);

@@ -40,7 +40,7 @@ if (token != null) {
                     $("#username").val(data.login);
                     $('#last-name').val(data.surname);
                     if (data.imagePath) {
-                        $('#img').attr('src', 'https://wolfskillsproject.azurewebsites.net/assets/img/avatars/' + data.imagePath);
+                        $('#img').attr('src', 'https://wolfskillsproject.azurewebsites.net/img/avatar/' + data.imagePath);
                     }
                     if (data.gender) {
                         $('#male').attr("checked", "checked");
