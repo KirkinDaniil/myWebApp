@@ -1,0 +1,230 @@
+@import '../fonts/gilroy.css';
+@import '../fonts/lato.css';
+
+body {
+    font-family: 'Lato', Verdana, sans-serif;
+    color: #333;
+}
+section {
+    padding: 120px 0 80px;
+}
+h1, h2, h3 {
+    font-family: 'Gilroy', 'Tahoma', sans-serif;
+    font-weight: 900;
+    color: #1f4068;
+    line-height: 1.2;
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2rem;
+}
+.main-font {
+    font-family: 'Gilroy', sans-serif;
+}
+.bg-dark-blue {
+    background-color: #162447;
+}
+.bg-blue {
+    background-color: #1f4068;
+}
+
+/* Navbar */
+
+.navbar {
+    box-shadow: 0 1px 8px #00000014;
+}
+.logo {
+    width: 100px;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #162447;
+    color: #fff;
+    border: 0;
+    border-radius: 0;
+}
+.navbar .btn {
+    background-color: #eeeeee;
+    border-bottom: 3px solid #cecece;
+    color: #333;
+}
+
+/* Main Screen */
+section#main-screen {
+    padding: 0;
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+section#main-screen:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000003d;
+    z-index: 1;
+}
+.hero {
+    height: 90vh;
+    width: 100%;
+    min-height: 700px;
+    z-index: 2;
+    text-align: center;
+    position: relative;
+}
+.hero-text h1 {
+    color: #fff;
+}
+.spin img {
+   animation-name: spin;
+   animation-duration: 3000ms;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+@keyframes spin {
+   from {
+       transform:rotate(0deg);
+   }
+   to {
+       transform:rotate(360deg);
+   }
+}
+
+.spin img {
+    width: 70px;
+}
+.btn-try {
+    color: #fff;
+    background-color: #1b1b2f;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.1s;
+    border: 2px solid transparent;
+}
+.btn-try:hover {
+    color: #fff;
+    background-color: #1f4068;
+    border: 2px solid #e43f5a;
+}
+.bottom-sub {
+    position: absolute;
+    bottom: 0px;
+}
+.bottom-sub img {
+    opacity: .6;
+    width: 50%;
+}
+
+/* About */
+section#about {
+    background-image: url('../img/about.png');
+    background-repeat: no-repeat;
+    background-position: center 250px;
+    background-attachment: fixed;
+}
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.about-text {
+    font-size: 1.2rem;
+}
+.about-img {
+    box-shadow: 0 10px 120px #0000000d;
+}
+
+/* Tests */
+section#tests {
+    background-image: url('../img/tests.png');
+    background-repeat: no-repeat;
+    background-position: center 250px;
+    background-attachment: fixed;
+}
+.card {
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
+    transition: .3s;
+}
+section#tests .card:hover .card-lang-name {
+    opacity: .4;
+}
+section#tests .card:hover {
+    box-shadow: 0 40px 50px #0000000d;
+}
+.card-body {
+    padding: 2.5rem 2rem;
+}
+.card-lang-name {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    opacity: .2;
+    transition: .3s;
+}
+.card-text {
+    color:#333;
+}
+
+/* Rating */
+section#rating {
+    background-image: url('../img/rating.png');
+    background-repeat: no-repeat;
+    background-position: center 250px;
+    background-attachment: fixed;
+}
+.bg-dark-blue .about-text, .bg-dark-blue .card-text, .bg-dark-blue .subtitle {
+    color: #ccc;
+}
+.bg-dark-blue h2, .bg-dark-blue h3 {
+    color: #3d7ac3;
+}
+section#rating .card:hover .card-lang-name {
+    opacity: .4;
+}
+
+/* Nice wolf */
+.questions {
+    display: block;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    z-index: 9999;
+    text-align: right;
+}
+.questions img {
+    width: 120px;
+}
+.questions p {
+    visibility: hidden;
+    font-size: 1.2rem;
+    position: relative;
+    top: 10px;
+    background: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+}
+.wolf2 {
+    display: none;
+}
+.questions:hover .wolf1{
+    display: none;
+}
+.questions:hover .wolf2{
+    display: inline-block;
+}
+.questions:hover p{
+    visibility: visible;
+}
