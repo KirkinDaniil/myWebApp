@@ -228,3 +228,43 @@ section#rating .card:hover .card-lang-name {
 .questions:hover p{
     visibility: visible;
 }
+
+/* Personal Area */
+section#personal-area {
+    /*background-image: url('../img/ws.png');*/
+    background-repeat: no-repeat;
+    background-position: center 250px;
+    background-attachment: fixed;
+}
+section#personal-area {
+    min-height: 100vh;
+}
+.cab-panel .lk-tab {
+    padding: 2rem;
+    background-color: #fff;
+}
+.media img {
+    border: 3px solid #f8f9fa;
+    padding: 0.5rem;
+}
+.title-personal-area {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: bold;
+    color: #162447;
+}
+.custom-file {
+    max-width: 200px;
+}
+.form-control[readonly] {
+    background-color: #fff;
+}
+section#personal-area label:not(.custom-control-label) {
+    display: inline-block;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    background: #f8f9fa;
+    padding: 0 4px;
+    font-size: 1.2rem;
+}
