@@ -268,3 +268,20 @@ section#personal-area label:not(.custom-control-label) {
     padding: 0 4px;
     font-size: 1.2rem;
 }
+
+/* Sign In & Sign Up */
+
+.form-control {
+    font-weight: 500;
+    color: #162447;
+    border: 1px solid #ececec;
+}
+
+#center-form-section {
+    padding: 80px 0;
+    min-height: 90vh;
+    display: flex;
+}
+#center-form-section h3 {
+    color: #3d7ac3;
+}
