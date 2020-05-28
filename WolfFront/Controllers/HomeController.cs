@@ -75,5 +75,19 @@ namespace WolfFront.Controllers
             }
             return BadRequest();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> ConfirmEmail(string guid)
+        {
+            User person = usersDatabase.Users.FirstOrDefault(x => x.Token == guid && x.Token != null);
+            if (person != null)
+            {
+                person.EmailConfirmed = true;
+                person.IsActive = true;
+                await usersDatabase.SaveChangesAsync();
+                return View();
+            }
+            return BadRequest("no_such_token");
+        }
     }
 }

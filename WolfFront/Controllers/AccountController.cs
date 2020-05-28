@@ -45,7 +45,7 @@ namespace WolfApi.Controllers
                     // текст письма
                     var body = new BodyBuilder
                     {
-                        HtmlBody = $"<a href = 'https://wolfskillsproject.azurewebsites.net/api/Account?guid={validToken}'> confirm </a>"
+                        HtmlBody = $"<a href = 'https://wolfskillsproject.azurewebsites.net/Home/ConfirmEmail?guid={validToken}'> confirm </a>"
                     };
                     m.Body = body.ToMessageBody();
                     // письмо представляет код html
@@ -60,20 +60,6 @@ namespace WolfApi.Controllers
                 }
             }
             return BadRequest(newUser);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> ConfirmEmail(string guid)
-        {
-            User person = usersDatabase.Users.FirstOrDefault(x=>x.Token==guid&&x.Token!=null);
-            if (person!=null)
-            {
-                person.EmailConfirmed = true;
-                person.IsActive = true;
-                await usersDatabase.SaveChangesAsync();
-                return Ok("Почта успешно подтверждена");
-            }
-            return BadRequest("no_such_token");
         }
 
         [HttpPut]
